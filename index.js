@@ -1,5 +1,8 @@
 let main = document.getElementById("mainContainer");
 
-let p = document.createElement("p");
-p.innerHTML = "God exist and helps the people in a need "
-main.append(p)
+async function fetchData(){
+    let response = await fetch('data.json');
+    let unit = await response.json();
+    console.log(unit)
+}
+fetchData();
