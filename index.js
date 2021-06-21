@@ -1,9 +1,11 @@
 let main = document.getElementById("mainContainer");
+
 let container = document.createElement("div");
 container.setAttribute("id", "container");
 main.appendChild(container);
 
 createHTMLElements = (image, p, unit, i, span, div, likes) => {
+
   let wrapper = document.createElement("div");
   wrapper.setAttribute("id", "wrapper");
   container.appendChild(wrapper);
@@ -65,12 +67,12 @@ async function fetchData() {
   main.appendChild(loadMore);
   console.log(unit);
 
-  loadMore.addEventListener("click", () => {
-    return curr += 4
-  });
+//   loadMore.addEventListener("click", () => {
+//     return curr += 4
+//   });
   for (let i = 0; i < unit.length; i++) {
     createHTMLElements("image", "p", unit, i, "span", "text");
-  }
+  }         
 }
 fetchData();
 
