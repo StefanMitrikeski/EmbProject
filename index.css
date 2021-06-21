@@ -1,8 +1,94 @@
 *{
     box-sizing: border-box;
     margin: 0;
-}
-p{
     font-size: large;
-    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#mainContainer{
+    width: 100%;
+    height: auto;
+}
+#container{
+    width: 80%;
+    margin:  0 auto;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: auto;
+    column-gap: 15px; 
+    row-gap: 15px;
+}
+#container.p{
+    margin: 0 auto;
+}
+#wrapper{
+    width: 100%;
+    height: 100%;
+    border: 1px solid grey;
+}
+
+#comentWrapper{    
+    grid-template-rows: 100px;
+    position: relative;
+    top: 10px;
+    height: 100px;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 95%;
+}
+.profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.fullName {
+    position: relative;
+    top: -26px;
+    right: 116px;
+}
+.dateBirth > span{
+    position: relative; 
+    font-size: small;
+}
+.cover{
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+.cover >img {
+    width: 94%;
+    height: 50%;
+    position: relative;
+    margin: 0 auto;
+}
+.instaImg {
+    position: relative;
+    float:right;
+    right: 5px;
+    top: 5px;
+}
+.heartImg {
+    position: relative;
+    border-top: 1px solid #b9b4b4;
+    width: 94%;
+    padding-top: 5px;
+    padding-left: 2px;
+    top: 63px;
+    left: 10px;
+}
+.likes {
+    position: relative;
+    left: 10px;
+    top: -2px;    
+    
+}
+
+.loadFourMore{
+    margin: 0 auto;
+    width: 16%;
+    height: 50px;
+    margin-top: 37px;
+    margin-bottom: 35px;
+    margin-left: 38%;
 }
