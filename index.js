@@ -56,54 +56,33 @@ createHTMLElements = (image, p, unit, i, span, div, likes) => {
   heartImg.appendChild(likes);
 };
 
+let curr = 4;
 async function fetchData() {
+  
   let response = await fetch("data.json");
   let unit = await response.json();
-  let curr = 0;
-
+  let cur=0;
   let loadMore = document.createElement("button");
   loadMore.classList.add("loadFourMore");
   loadMore.innerHTML = `Load More`;
   main.appendChild(loadMore);
   console.log(unit);
-
-//   loadMore.addEventListener("click", () => {
-//     return curr += 4
-//   });
-  for (let i = 0; i < unit.length; i++) {
-    createHTMLElements("image", "p", unit, i, "span", "text");
-  }         
+  
+  for (let i=0;i<4;i++){
+      createHTMLElements("image", "p", unit, i, "span", "text");
+  }
+  loadMore.addEventListener("click", () => {
+  for (let i=curr;i<curr+4;i++){
+    if(i < unit.length){
+      createHTMLElements("image", "p", unit, i, "span", "text");
+    }
+    else{
+      loadMore.style.display = 'none';
+    }
+  }
+  curr = curr+4;
+  });
+  
+           
 }
 fetchData();
-
-// console.clear();
-// var work = document.querySelector("#workOuterShell");
-// var items = Array.from(work.querySelectorAll(".item"));
-// var loadMore = document.getElementById("loadMore");
-
-// maxItems = 4;
-// loadItems = 4;
-// hiddenClass = "hiddenStyle";
-// hiddenItems = Array.from(document.querySelectorAll(".hiddenStyle"));
-
-// items.forEach(function (item, index) {
-//   console.log(item.innerText, index);
-//   if (index > maxItems - 1) {
-//     item.classList.add(hiddenClass);
-//   }
-// });
-
-// loadMore.addEventListener("click", function () {
-//   [].forEach.call(document.querySelectorAll("." + hiddenClass), function (
-//     item,
-//     index
-//   ) {
-//     if (index < loadItems) {
-//       item.classList.remove(hiddenClass);
-//     }
-
-//     if (document.querySelectorAll("." + hiddenClass).length === 0) {
-//       loadMore.style.display = "none";
-//     }
-//   });
-// });
